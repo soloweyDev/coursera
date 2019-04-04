@@ -10,6 +10,20 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EnsureEqual.cpp" />
+    <ClCompile Include="rational_map.cpp" />
+    <ClCompile Include="rational_mult_div.cpp" />
+    <ClCompile Include="rational_throw.cpp" />
+    <ClCompile Include="time_server.cpp" />
+    <ClCompile Include="Вывод с точностью.cpp" />
+    <ClCompile Include="Калькулятор обыкновенных дробей.cpp" />
+    <ClCompile Include="Обратимая функция.cpp" />
+    <ClCompile Include="Работа с файлами.cpp" />
+    <ClCompile Include="Список студентов.cpp" />
+    <ClCompile Include="Структура LectureTitle.cpp" />
+    <ClCompile Include="Чтение и вывод таблицы.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CF36DC21-4CF8-4981-94EE-38498BE2C4D1}</ProjectGuid>
     <RootNamespace>Week4</RootNamespace>
@@ -63,8 +77,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
