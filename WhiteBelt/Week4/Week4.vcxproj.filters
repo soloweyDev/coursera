@@ -51,5 +51,17 @@
     <ClCompile Include="Структура LectureTitle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="rational_eq_add_sub.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rational_interface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Обратимая функция с умножением и делением.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rational_io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

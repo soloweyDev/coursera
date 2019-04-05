@@ -12,12 +12,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EnsureEqual.cpp" />
+    <ClCompile Include="rational_eq_add_sub.cpp" />
+    <ClCompile Include="rational_interface.cpp" />
+    <ClCompile Include="rational_io.cpp" />
     <ClCompile Include="rational_map.cpp" />
     <ClCompile Include="rational_mult_div.cpp" />
     <ClCompile Include="rational_throw.cpp" />
     <ClCompile Include="time_server.cpp" />
     <ClCompile Include="Вывод с точностью.cpp" />
     <ClCompile Include="Калькулятор обыкновенных дробей.cpp" />
+    <ClCompile Include="Обратимая функция с умножением и делением.cpp" />
     <ClCompile Include="Обратимая функция.cpp" />
     <ClCompile Include="Работа с файлами.cpp" />
     <ClCompile Include="Список студентов.cpp" />
