@@ -64,6 +64,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Автобусные остановки — 1.cpp" />
+    <ClCompile Include="Автобусные остановки — 2.cpp" />
+    <ClCompile Include="Автобусные остановки — 3.cpp" />
+    <ClCompile Include="Анаграммы.cpp" />
+    <ClCompile Include="Ежемесячные дела.cpp" />
+    <ClCompile Include="Количество уникальных строк.cpp" />
+    <ClCompile Include="Множество значений словаря.cpp" />
+    <ClCompile Include="Синонимы.cpp" />
+    <ClCompile Include="Справочник столиц.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

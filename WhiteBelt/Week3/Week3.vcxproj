@@ -64,6 +64,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Имена и фамилии — 1.cpp" />
+    <ClCompile Include="Имена и фамилии — 2.cpp" />
+    <ClCompile Include="Имена и фамилии — 3.cpp" />
+    <ClCompile Include="Отсортированные строки.cpp" />
+    <ClCompile Include="Сортировка без учёта регистра.cpp" />
+    <ClCompile Include="Сортировка целых чисел по модулю.cpp" />
+    <ClCompile Include="Способы инициализации.cpp" />
+    <ClCompile Include="Строка.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
