@@ -23,12 +23,12 @@ public:
 	tuple<TasksInfo, TasksInfo> PerformPersonTasks(const string& person, int task_count)
 	{
 		TasksInfo updated_tasks, untouched_tasks;
-		int sNew, sInProgress, sTesting, sDone;
 
 		TasksInfo tasks = GetPersonTasksInfo(person);
 		if (tasks.size() == 0)
 			return { updated_tasks, untouched_tasks };
 
+		int sNew, sInProgress, sTesting, sDone;
 		try
 		{
 			sNew = tasks.at(TaskStatus::NEW);
@@ -62,13 +62,19 @@ public:
 			sDone = 0;
 		}
 
+		// начали работать с задачами
+		tasksPersons[person][TaskStatus::IN_PROGRESS];
+		tasksPersons[person][TaskStatus::TESTING];
+		tasksPersons[person][TaskStatus::DONE];
 		if (sNew >= task_count)
 		{
 			tasksPersons[person][TaskStatus::NEW] = sNew - task_count;
 			tasksPersons[person][TaskStatus::IN_PROGRESS] += task_count;
 			updated_tasks[TaskStatus::IN_PROGRESS] = task_count;
 			if (sNew - task_count != 0) untouched_tasks[TaskStatus::NEW] = sNew - task_count;
-			if (tasksPersons[person][TaskStatus::TESTING] != 0) untouched_tasks[TaskStatus::TESTING] = tasksPersons[person][TaskStatus::TESTING];
+			if (tasksPersons[person][TaskStatus::NEW] == 0) tasksPersons[person].erase(TaskStatus::NEW);
+			if (tasksPersons[person].count(TaskStatus::TESTING) > 0)
+				untouched_tasks[TaskStatus::TESTING] = tasksPersons[person][TaskStatus::TESTING];
 		}
 		else
 		{
@@ -86,15 +92,23 @@ public:
 			}
 			else
 			{
-				if (tasksPersons[person][TaskStatus::IN_PROGRESS] - sInProgress <= 0) tasksPersons[person].erase(TaskStatus::IN_PROGRESS);
+				if (tasksPersons[person][TaskStatus::IN_PROGRESS] - sInProgress <= 0)
+					tasksPersons[person].erase(TaskStatus::IN_PROGRESS);
+				else
+				{
+					tasksPersons[person][TaskStatus::IN_PROGRESS] -= sInProgress;
+					if (tasksPersons[person][TaskStatus::IN_PROGRESS] == 0) tasksPersons[person].erase(TaskStatus::IN_PROGRESS);
+				}
+				tasksPersons[person][TaskStatus::TESTING] += sInProgress;
 				delta -= sInProgress;
+
+				// что-то тут страное
 				if (sTesting + sInProgress - delta < 0)
 					delta = sTesting;
-
-				tasksPersons[person][TaskStatus::TESTING] = sTesting + sInProgress - delta;
+				tasksPersons[person][TaskStatus::TESTING] -= delta;
 				tasksPersons[person][TaskStatus::DONE] += delta;
 				if (sInProgress != 0) updated_tasks[TaskStatus::TESTING] = sInProgress;
-				if (sTesting - delta == 0) tasksPersons[person].erase(TaskStatus::TESTING);
+				if (tasksPersons[person][TaskStatus::TESTING] == 0) tasksPersons[person].erase(TaskStatus::TESTING);
 				if (delta != 0) updated_tasks[TaskStatus::DONE] = delta;
 				if (sTesting - delta != 0) untouched_tasks[TaskStatus::TESTING] = sTesting - delta;
 			}
